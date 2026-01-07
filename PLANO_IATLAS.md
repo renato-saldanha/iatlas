@@ -15,6 +15,17 @@
 - [ x] Documentação inicial (README, arquitetura, API docs)
 - [ ] Criar issues/tasks no GitHub Projects
 
+## GitHub Projects Setup
+
+- [ ] Criar novo GitHub Project: "Assistente de Estudos - MVP"
+- [ ] Configurar Board view com colunas (Todo, In Progress, Review, Done)
+- [ ] Criar labels (backend, frontend, phase/*, priority/*)
+- [ ] Criar milestone "v1.0 - MVP"
+- [ ] Executar script criar_todas_as_issues.sh
+- [ ] Adicionar todas as issues ao project
+- [ ] Assignar issues a você mesmo
+- [ ] Verificar progresso inicial (0% completo)
+
 ### 1.2 Infraestrutura
 
 #### Conta Fly.io
