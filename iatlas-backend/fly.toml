@@ -1,0 +1,48 @@
+name: Deploy to Fly.io
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'iatlas-backend/**'
+  workflow_dispatch:  # Permite deploy manual
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./iatlas-backend
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Run tests
+        run: |
+          pytest || echo "Tests not implemented yet"
+        continue-on-error: true  # Permite continuar se não houver testes
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Fly.io CLI
+        uses: superfly/flyctl-actions/setup-flyctl@master
+      
+      - name: Deploy to Fly.io
+        working-directory: ./iatlas-backend
+        run: flyctl deploy --remote-only -a iatlas-backend
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

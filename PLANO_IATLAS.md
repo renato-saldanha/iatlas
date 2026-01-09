@@ -13,15 +13,14 @@
 - [ x] Configurar estrutura de pastas (backend: models, routes, services, schemas, utils)
 - [ x] Configurar variáveis de ambiente 
 - [ x] Documentação inicial (README, arquitetura, API docs)
-- [ ] Criar issues/tasks no GitHub Projects
+- [ x] Criar issues/tasks no GitHub Projects
 
 ## GitHub Projects Setup
 
-- [ ] Criar novo GitHub Project: "Assistente de Estudos - MVP"
-- [ ] Configurar Board view com colunas (Todo, In Progress, Review, Done)
-- [ ] Criar labels (backend, frontend, phase/*, priority/*)
-- [ ] Criar milestone "v1.0 - MVP"
-- [ ] Executar script criar_todas_as_issues.sh
+- [ x] Criar novo GitHub Project: "Assistente de Estudos - MVP"
+- [ x] Configurar Board view com colunas (Todo, In Progress, Review, Done)
+- [ x] Criar labels (backend, frontend, phase/*, priority/*)
+- [ x] Criar milestone "v1.0 - MVP"
 - [ ] Adicionar todas as issues ao project
 - [ ] Assignar issues a você mesmo
 - [ ] Verificar progresso inicial (0% completo)
@@ -29,43 +28,45 @@
 ### 1.2 Infraestrutura
 
 #### Conta Fly.io
-- [ ] Registrar em https://fly.io
-- [ ] Verificar email
-- [ ] Instalar Fly CLI (`curl -L https://fly.io/install.sh | sh`)
-- [ ] Fazer login (`fly auth login`)
+- [ x] Registrar em https://fly.io
+- [ x] Verificar email
+- [ x] Instalar Fly CLI (`curl -L https://fly.io/install.sh | sh`)
+- [ x] Fazer login (`fly auth login`)
 
 #### PostgreSQL no Fly.io
-- [ ] Criar app PostgreSQL: `fly postgres create --name study-ai-db`
-- [ ] Anotar connection string (DATABASE_URL)
-- [ ] Criar backup automático (opcional)
-- [ ] Testar conexão local
+- [ x] Criar app PostgreSQL: `fly postgres create --name study-ai-db`
+- [ x] Anotar connection string (DATABASE_URL)
+- [ x] Testar conexão local
 
 #### Aplicação Backend no Fly.io
-- [ ] Criar app Web Service: `fly apps create study-ai-backend`
-- [ ] Anexar PostgreSQL: `fly postgres attach study-ai-db --app study-ai-backend`
-- [ ] Configurar regra de health check
+- [ x] Criar app Web Service: `fly apps create study-ai-backend`
+- [ x] Anexar PostgreSQL: `fly postgres attach study-ai-db --app study-ai-backend`
+- [ x] Configurar regra de health check
 
 #### Outras Contas
-- [ ] Registrar aplicação Google OAuth (obter CLIENT_ID e CLIENT_SECRET)
-- [ ] Configurar conta Anthropic (obter API KEY Claude)
-- [ ] Configurar conta Vercel para deploy frontend
+- [ x] Registrar aplicação Google OAuth (obter CLIENT_ID e CLIENT_SECRET)
+- [ x] Configurar conta Google (obter API KEY Gemini)
+- [ x] Configurar conta Vercel para deploy frontend
 
 ### 1.3 Dependências & Ferramentas
-- [ ] Gerar `requirements.txt` (FastAPI, SQLAlchemy, Anthropic, pdfplumber, bcrypt, JWT, etc)
-- [ ] Gerar `package.json` (Next.js, NextAuth, Tailwind, Shadcn/ui, axios)
-- [ ] Instalar e configurar linters/formatters (Black, Prettier)
-- [ ] Setup Docker para desenvolvimento local
+- [ x] Gerar `requirements.txt` (FastAPI, SQLAlchemy, Anthropic, pdfplumber, bcrypt, JWT, etc)
+- [ x] Gerar `package.json` (Next.js, NextAuth, Tailwind, Shadcn/ui, axios)
+- [ x] Instalar e configurar linters/formatters (Black, Prettier)
+- [ x] Setup Docker para desenvolvimento local
 
 ### 1.4 Configuração Fly.io Específica
-- [ ] Criar `fly.toml` (configuração Fly.io)
-- [ ] Criar `Dockerfile` (opcional, para mais controle)
-- [ ] Configurar variáveis de ambiente em Fly.io:
+- [ x] Criar `fly.toml` (configuração Fly.io)
+- [ x] Criar `Dockerfile` (opcional, para mais controle)
+- [ x ] Configurar variáveis de ambiente em Fly.io:
 ```bash
   fly secrets set -a study-ai-backend \
     SECRET_KEY="your-secret-key" \
     ANTHROPIC_API_KEY="sk-..." \
     ENVIRONMENT="production"
 ```
+#### OBSERVAÇÃO
+Não foi configurado o SECRET_KEY por não ter a implementação do backend
+
 - [ ] Testar deploy automático via GitHub
 
 ---
