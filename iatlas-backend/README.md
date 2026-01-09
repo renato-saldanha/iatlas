@@ -8,6 +8,8 @@ API REST para análise de textos e PDFs com IA.
 - PostgreSQL
 - LangChain + Gemini
 - JWT Authentication
+- Black (formatação de código)
+- Ruff (linter)
 
 ## 📦 Instalação
 
@@ -19,6 +21,9 @@ venv\Scripts\activate     # Windows
 
 # Instalar dependências
 pip install -r requirements.txt
+
+# Instalar dependências de desenvolvimento (Black, Ruff)
+pip install -e ".[dev]"
 ```
 
 ## ⚙️ Configuração
@@ -35,7 +40,11 @@ ENVIRONMENT=development
 ## ▶️ Executar
 
 ```bash
-uvicorn app.main:app --reload
+# Desenvolvimento
+uvicorn main:app --reload
+
+# Ou executar diretamente
+python main.py
 ```
 
 API disponível em: `http://localhost:8000`
@@ -50,3 +59,17 @@ API disponível em: `http://localhost:8000`
 ```bash
 pytest
 ```
+
+## 🎨 Formatação de Código
+
+Este projeto usa [Black](https://black.readthedocs.io/) para formatação automática de código Python.
+
+```bash
+# Formatar código com Black
+black .
+
+# Verificar formatação sem aplicar mudanças
+black --check .
+```
+
+A configuração do Black está em `pyproject.toml`.

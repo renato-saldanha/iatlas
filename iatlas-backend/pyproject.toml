@@ -96,3 +96,32 @@ dependencies = [
     "zstandard==0.25.0",
     "logging==0.4.9.6",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "black==24.10.0",
+    "ruff==0.8.4",  # Linter rápido (opcional, mas recomendado)
+]
+
+# Configuração do Black
+[tool.black]
+line-length = 100
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # diretórios
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migrations
+)/
+'''
