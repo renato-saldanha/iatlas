@@ -67,15 +67,16 @@
 #### OBSERVAÇÃO
 Não foi configurado o SECRET_KEY por não ter a implementação do backend
 
-- [ ] Testar deploy automático via GitHub
+- [ x] Testar deploy automático via GitHub
 
 ---
 
 ## 2. Fase 1: Backend Core (2-3 semanas)
 
 ### 2.1 Database & ORM
-- [ ] Configurar PostgreSQL Fly.io (connection string)
-- [ ] Criar models SQLAlchemy (User, StudySession, Document)
+- [ x] Configurar PostgreSQL Fly.io (connection string)
+  : postgresql://fly-user:9R2llZ4qyMdiPUajp7OrpZ6p@pgbouncer.n83v7rg6n1lo5gxk.flympg.net/fly-db
+- [ x] Criar models SQLAlchemy (User, StudySession, Document)
 - [ ] Setup Alembic para migrations
 - [ ] Criar migration inicial
 - [ ] Testes de conexão DB (local + Fly.io)
